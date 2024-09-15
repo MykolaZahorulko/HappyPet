@@ -1,0 +1,20 @@
+@import '../../assets/styles/mixins.scss';
+
+.logo {
+	z-index: 4;
+	margin-right: rem(10);
+	display: flex;
+	align-items: center;
+	.logoImg {
+		@include adaptive-value(width, 52, 34, 1);
+		@include adaptive-value(height, 48, 34, 1);
+		margin-right: rem(3);
+		@media (max-width: em(768)) {
+			margin-right: rem(2);
+		}
+	}
+	.logoName {
+		@include adaptive-value(font-size, 26, 18, 1);
+		font-weight: 800;
+	}
+}

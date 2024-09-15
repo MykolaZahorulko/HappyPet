@@ -1,0 +1,40 @@
+@import '../../assets/styles/mixins.scss';
+
+.friends {
+	@include adaptive-value(padding-top, 60, 30, 1);
+	padding-bottom: rem(50);
+	display: block;
+	
+	&__container {
+		display: block;
+	}
+	
+	&__greed {
+		display: grid;
+		grid-template-columns: repeat(4, minmax(rem(220), rem(300)));
+		gap: rem(20);
+		@media (max-width: em(992)) {
+			grid-template-columns: repeat(3, minmax(rem(180), rem(300)));
+		}
+		@media (max-width: em(620)) {
+			grid-template-columns: repeat(2, minmax(rem(180), rem(360)));
+		}
+		@media (max-width: em(380)) {
+			grid-template-columns: repeat(1, minmax(rem(180), 1fr));
+		}
+	}
+}
+
+.petChanger {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	@include adaptive-value(font-size, 18, 14, 1);
+	margin-bottom: rem(30);
+	@media (max-width: em(480)) {
+		flex-direction: column;
+		align-items: start;
+		justify-content: start;
+		gap: rem(10);
+	}
+}

@@ -1,0 +1,35 @@
+@import '../../assets/styles/mixins.scss';
+
+.searchingForItem {
+	@include border-radius(rem(20));
+	@include transition(all, .4s, ease, 0s);
+	cursor: pointer;
+	display: flex;
+	flex-direction: column;
+	
+	&__img {
+		width: 100%;
+		padding-bottom: 100%;
+	}
+	
+	&__name {
+		color: black;
+		text-align: center;
+		font-weight: 600;
+		@include adaptive-value(font-size, 20, 16, 1);
+	}
+	
+	// hover
+	@media (hover:hover) {
+		&:hover {
+			box-shadow: 0 0 4px #000000;
+		}
+	}
+	
+	@media (hover:none) {
+		&:active {
+			box-shadow: 0 0 4px #000000;
+		}
+	}
+	
+}

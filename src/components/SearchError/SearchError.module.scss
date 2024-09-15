@@ -1,0 +1,9 @@
+@import '../../assets/styles/mixins.scss';
+
+.error {
+	text-align: center;
+	color: darkred;
+	@media (max-width: em(768)) {
+		font-size: rem(18);
+	}
+}

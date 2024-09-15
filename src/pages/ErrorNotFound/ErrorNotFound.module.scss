@@ -1,0 +1,18 @@
+@import '../../assets/styles/mixins.scss';
+
+.error {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: rem(50) 0;
+}
+
+.error__container {
+	display: block;
+}
+
+.error__img {
+//	width: rem(500);
+	padding-bottom: 100%;
+	width: 50vw;
+}

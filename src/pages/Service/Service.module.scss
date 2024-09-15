@@ -1,0 +1,62 @@
+@import '../../assets/styles/mixins.scss';
+
+.service {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding: rem(50) 0;
+	border-radius: 8px;
+	
+	&__container {
+		display: block;
+	}
+	
+}
+
+.title {
+	@include adaptive-value(font-size, 55, 34, 1);
+	line-height: 1;
+	font-weight: 800;
+	@include adaptive-value(margin-bottom, 30, 20, 1);
+}
+
+.form {
+	width: 100%;
+	max-width: 500px;
+	display: flex;
+	flex-direction: column;
+}
+
+.formGroup {
+	display: flex;
+	flex-direction: column;
+	margin-bottom: 1rem;
+	
+	input, textarea, select, option {
+		padding: rem(18) rem(30);
+		background-color: lemonchiffon;
+		@include border-radius(rem(8));
+		@include adaptive-value(font-size, 22, 18 , 1);
+		@media (max-width: em(768)) {
+			padding: rem(12) rem(22);
+		}
+	}
+	
+	select, option {
+		cursor: pointer;
+	}
+	
+	textarea {
+		height: rem(170);
+	}
+	
+	label {
+		@include adaptive-value(font-size, 18, 14, 1);
+		font-weight: 600;
+	}
+	
+}
+
+.submitButton {
+	background-color: lemonchiffon;
+}

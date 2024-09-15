@@ -1,0 +1,86 @@
+@import '../../assets/styles/mixins.scss';
+
+
+.searchWrap {
+	overflow: auto;
+	z-index: 15;
+	padding: rem(40) 0;
+	position: fixed;
+	top: -100%;
+	right: -100%;
+	@include scale(0);
+	height: 100%;
+	width: 100%;
+	opacity: 0;
+	transition: opacity 1s ease, right 1.8s ease 0s, top 1.8s ease 0s, transform 1s ease 0s;
+	-webkit-transition: opacity 1s ease, right 1.8s ease 0s, top 1.8s ease 0s, transform 1s ease 0s;
+	-o-transition: opacity 1s ease, right 1.8s ease 0s, top 1.8s ease 0s, transform 1s ease 0s;
+	-moz-transition: opacity 1s ease, right 1.8s ease 0s, top 1.8s ease 0s, transform 1s ease 0s;
+	
+	&._active {
+		@include transition(all, 1.6s, ease, 0s);
+		@include scale(1);
+		top: 0;
+		right: 0;
+		opacity: 1;
+	}
+	
+	&__container {
+		display: inherit;
+	}
+}
+
+
+.search {
+	width: 100%;
+	margin-bottom: rem(30);
+	
+	@media (max-width: em(768)) {
+		margin-bottom: rem(20);
+	}
+	
+	&__body {
+		display: flex;
+	}
+	
+	&__input {
+		flex: 1 1 100%;
+		margin-right: rem(20);
+	}
+	
+	&__closure {
+		cursor: pointer;
+		flex: 0 0 rem(27);
+		height: rem(27);
+		align-self: flex-end;
+	}
+}
+
+.petChanger {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	@include adaptive-value(font-size, 18, 14, 1);
+	margin-bottom: rem(30);
+	@media (max-width: em(480)) {
+		flex-direction: column;
+		align-items: start;
+		justify-content: start;
+		gap: rem(10);
+	}
+}
+
+.searchResultContainer {
+	display: grid;
+	grid-template-columns: repeat(4, minmax(rem(220), rem(300)));
+	gap: rem(20);
+	@media (max-width: em(992)) {
+		grid-template-columns: repeat(3, minmax(rem(180), rem(300)));
+	}
+	@media (max-width: em(620)) {
+		grid-template-columns: repeat(2, minmax(rem(180), rem(360)));
+	}
+	@media (max-width: em(380)) {
+		grid-template-columns: repeat(1, minmax(rem(180), 1fr));
+	}
+}

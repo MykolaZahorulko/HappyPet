@@ -1,0 +1,39 @@
+@import '../../../assets/styles/mixins.scss';
+
+.header__nav_item {
+	content: '';
+}
+
+.header__nav_link {
+	font-size: rem(22);
+	font-family: $montserrat;
+	font-weight: 500;
+	@include transition(all, 0.3s, ease, 0s);
+	@media (max-width: em(992)) {
+		font-size: rem(20);
+	}
+	@media (max-width: em(880)) {
+		font-size: rem(18);
+	}
+	
+	@media (max-width: em(768)) {
+		font-size: rem(28);
+		font-weight: 600;
+	}
+	
+	// hover
+	@media (hover: hover) {
+		&:hover {
+			font-weight: 700;
+			text-decoration: underline;
+		}
+	}
+	
+	@media (hover: none) {
+		&:active {
+			@include transition(all, 0.6s, ease, 0s);
+			font-weight: 700;
+			text-decoration: underline;
+		}
+	}
+}

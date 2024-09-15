@@ -1,0 +1,110 @@
+@import '../../assets/styles/mixins.scss';
+
+.dropdown {
+	position: relative;
+	display: inline-flex;
+	flex-direction: column;
+	align-items: center;
+	border-radius: rem(15);
+	
+	&__button {
+		
+		z-index: 2;
+		background-color: lemonchiffon;
+		cursor: pointer;
+		padding: rem(6) rem(8);
+		border: 1px solid #000000;
+		width: 100%;
+		display: flex;
+		align-items: center;
+		gap: rem(15);
+		justify-content: space-between;
+		border-radius: rem(10);
+		@include adaptive-value(font-size, 16, 14, 1);
+		font-weight: 600;
+		margin-bottom: rem(5);
+		@media (max-width: em(768)) {
+			padding: rem(5);
+		}
+	}
+	
+	&__arrow {
+		width: rem(16);
+		height: rem(16);
+		@include transition(all, 0.4s, ease, 0s);
+		
+		&._active {
+			@include rotate(180deg);
+		}
+	}
+	
+	&__content {
+		z-index: 2;
+		border-radius: rem(10);
+		border: 1px solid #000000;
+		width: 100%;
+		flex-direction: column;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		position: absolute;
+		top: 0;
+		left: 0;
+		@include transition(all, 0.4s, ease, 0s);
+		@include scale(0.7);
+		opacity: 0;
+		visibility: hidden;
+		
+		&._active {
+			top: 100%;
+			opacity: 1;
+			visibility: visible;
+			@include scale(1);
+		}
+		
+		&_item {
+			width: 100%;
+			border-radius: rem(10) rem(10) 0 0;
+			cursor: pointer;
+			padding: rem(3) rem(4);
+			display: flex;
+			justify-content: space-between;
+			z-index: 1;
+			@include adaptive-value(font-size, 16, 14, 1);
+			@include transition(all, 0.4s, ease, 0s);
+			background-color: lemonchiffon;
+			
+			div {
+				white-space: nowrap;
+				width: 100%;
+				overflow: hidden;
+				text-overflow: ellipsis;
+			}
+			
+			&:last-child {
+				border-radius: 0 0 rem(10) rem(10);
+			}
+			
+			&[disabled], &:disabled {
+				pointer-events: none;
+			}
+			
+			// hover
+			@media (hover: hover) {
+				&:hover {
+					font-weight: 600;
+				}
+			}
+			
+			@media (hover: none) {
+				&:active {
+					font-weight: 600;
+				}
+			}
+			
+			&:not(:last-child) {
+				border-bottom: 1px solid #000000;
+			}
+		}
+	}
+}
