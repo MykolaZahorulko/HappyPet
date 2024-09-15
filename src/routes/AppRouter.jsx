@@ -14,10 +14,10 @@ const AppRouter = () => {
 		<Router>
 			<Layout>
 				<Routes>
-					<Route path='/' element={<Home />} />
-					<Route path='/friends/' element={<Friends />} />
-					<Route path='/service/' element={<Service />} />
-					<Route path='/contacts/' element={<Contacts/>} />
+					<Route path='/HappyPet/' element={<Home />} />
+					<Route path='/HappyPet/friends/' element={<Friends />} />
+					<Route path='/HappyPet/service/' element={<Service />} />
+					<Route path='/HappyPet/contacts/' element={<Contacts/>} />
 					<Route path='*' element={<ErrorNotFound />} />
 				</Routes>
 				<Modal title="&#10507; Searching for a &#10507;">

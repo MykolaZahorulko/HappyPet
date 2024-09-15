@@ -14,10 +14,10 @@ const Home = () => {
 					<div className={styles.home__leftSide}>
 						<h1 className={styles.home__title}>Yor new home delivery friend</h1>
 						<p className={styles.home__text}>Online pet store - a convenient solution when you are too lazy to leave the house</p>
-						<Button className={styles.button} to='/friends/'>See friends</Button>
+						<Button className={styles.button} to='/HappyPet/friends/'>See friends</Button>
 						<div className={styles.home__links}>
-							<PetLink img={mainDog} to='/friends/' name='Dogs' onClick={setSearchingForDog}/>
-							<PetLink img={mainCat} to='/friends/' name='Cats' onClick={setSearchingForCat}/>
+							<PetLink img={mainDog} to='/HappyPet/friends/' name='Dogs' onClick={setSearchingForDog}/>
+							<PetLink img={mainCat} to='/HappyPet/friends/' name='Cats' onClick={setSearchingForCat}/>
 						</div>
 					</div>
 					<div className={`${styles.home__img} ${styles.img}`}>

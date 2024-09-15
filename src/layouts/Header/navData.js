@@ -1,8 +1,8 @@
 const navData = [
-  { name: 'Home', path: '/' },
-  { name: 'Friends', path: '/friends/' },
-  { name: 'Service', path: '/service/' },
-  { name: 'Contacts', path: '/contacts/' }
+  { name: 'Home', path: '/HappyPet/' },
+  { name: 'Friends', path: '/HappyPet/friends/' },
+  { name: 'Service', path: '/HappyPet/service/' },
+  { name: 'Contacts', path: '/HappyPet/contacts/' }
 ]
 
 export default navData

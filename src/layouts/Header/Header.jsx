@@ -1,4 +1,3 @@
-import React, { useEffect, useState } from 'react'
 import Logo from '../../components/Logo/Logo.jsx'
 import Search from '../../components/Search/Search.jsx'
 import { useActions } from '../../hooks/useActions.js'
@@ -11,9 +10,8 @@ import navData from './navData.js'
 import NavItem from './NavItem/NavItem.jsx'
 
 const Header = () => {
-	const { setModalState, setSearchingForDog, setSearchingForCat, setIsSearching } = useActions()
+	const { setModalState, setIsSearching } = useActions()
 	const { value: searchingFor } = useSelectorValue(state => state.searchingFor)
-	const { value: isModalActive } = useSelectorValue(state => state.isModalActive)
 	const { value: isMenuOpen } = useSelectorValue(state => state.isMenuOpen)
 	const { dogData, catData } = useBreedsData()
 	useLockBodyScroll(isMenuOpen)
